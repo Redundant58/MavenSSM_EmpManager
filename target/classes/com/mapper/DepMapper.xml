@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.IDepMapper">
+	<select id="findAll" resultType="com.po.Dep">
+		select * from dep
+	</select>
+	<insert id="save" parameterType="com.po.Dep">
+		insert into dep(depname) values(#{depname})
+	</insert>
+	<select id="findByDepid" parameterType="Integer" resultType="com.po.Dep">
+		select * from dep where depid=#{depid}
+	</select>
+	<update id="update" parameterType="com.po.Dep">
+		update dep set depname=#{depname} where depid=#{depid}
+	</update>
+</mapper>
